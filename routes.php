@@ -2,7 +2,7 @@
 
 return [
     '/' => 'controllers/index.php',
-    '/notes' => 'controllers/notes.php',
-    '/note' => 'controllers/note.php',
-    '/note/create' => 'controllers/note-create.php',
+    '/notes' => 'controllers/notes/index.php',
+    '/note' => 'controllers//notes/show.php',
+    '/note/create' => 'controllers/notes/create.php',
 ];
