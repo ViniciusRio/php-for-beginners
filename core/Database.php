@@ -1,6 +1,8 @@
 <?php
 
-namespace core;
+namespace Core;
+
+use PDO;
 
 class Database
 {
