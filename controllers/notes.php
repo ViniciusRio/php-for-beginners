@@ -2,7 +2,7 @@
 
 $config = require 'config.php';
 $db = new Database($config['database']);
-$notes = $db->query('SELECT * FROM notes')->fetchAll();
+$notes = $db->query('SELECT * FROM notes')->findAll();
 
 $heading = 'Notes';
 
