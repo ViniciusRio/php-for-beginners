@@ -25,6 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':user_id' => 3
         ]);
     }
+
+    header('location: /notes');
+
+    exit();
 }
 
 require view('notes/create.view.php', [

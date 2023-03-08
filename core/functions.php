@@ -30,3 +30,9 @@ function view($path, $attributes = []): void
 
     require base_path('views/'. $path);
 }
+
+function abort($status = 404) {
+    http_response_code(404);
+    require base_path("views/{$status}.php");
+    die();
+}
