@@ -33,15 +33,15 @@ class Router {
         $this->add($uri, $controller, 'DELETE');
     }
 
-    public function route($uri, $method) : void
+    public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
-                require base_path($route['controller']);
+               return require base_path($route['controller']);
             }
         }
 
-        $this->abort();
+        $this->abort(404);
     }
 
     public function abort($status = 404) {
