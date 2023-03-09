@@ -1,8 +1,10 @@
 <?php
 
+namespace Core;
 class Container
 {
     protected $bindings = [];
+
     public function bind($key, $fn)
     {
         $this->bindings[$key] = $fn;
