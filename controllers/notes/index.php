@@ -1,10 +1,10 @@
 <?php
 
+use Core\App;
 use Core\Database;
 
-$config = require base_path('config.php');
+$db = App::resolve(Database::class);
 
-$db = new Database($config['database']);
 $notes = $db->query('SELECT * FROM notes')->findAll();
 
 view('notes/index.view.php', [
