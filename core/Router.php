@@ -9,30 +9,41 @@ class Router {
             'uri' => $uri,
             'controller' => $controller,
             'method' => $method,
+            'middleware' => null
         ];
+
+        return $this;
     }
     public function get($uri, $controller)
     {
-        $this->add($uri, $controller, 'GET');
+        return $this->add($uri, $controller, 'GET');
     }
     public function post($uri, $controller)
     {
-        $this->add($uri, $controller, 'POST');
+        return $this->add($uri, $controller, 'POST');
     }
     public function put($uri, $controller)
     {
-        $this->add($uri, $controller, 'PUT');
+        return $this->add($uri, $controller, 'PUT');
     }
     public function patch($uri, $controller)
     {
-        $this->add($uri, $controller, 'PATCH');
+        return $this->add($uri, $controller, 'PATCH');
 
     }
     public function delete($uri, $controller)
     {
-        $this->add($uri, $controller, 'DELETE');
+        return $this->add($uri, $controller, 'DELETE');
     }
 
+    public function only($key)
+    {
+        $this->routes[array_key_last($this->routes)]['middleware'] = $key;
+
+        dd($this->routes);
+
+
+    }
     public function route($uri, $method)
     {
         foreach ($this->routes as $route) {
