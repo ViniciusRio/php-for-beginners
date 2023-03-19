@@ -3,8 +3,7 @@
 return [
     'database' => [
         'host' => 'localhost',
-        'port' => '3307',
-        'dbname' => 'php-for-beginners',
-        'charset' => 'utf8mb4'
+        'port' => '5432',
+        'dbname' => 'php_for_beginners'
     ]
 ];

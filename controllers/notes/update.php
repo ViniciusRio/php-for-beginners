@@ -7,9 +7,9 @@ use Core\Validator;
 $db = App::resolve(Database::class);
 $id = $_POST['id'];
 $body = $_POST['body'];
-$currentUser = 3;
+$currentUser = 4;
 
-$note = $db->query('SELECT * FROM notes WHERE id = :id', [':id' => $id])->findOrFail();
+$note = $db->query('SELECT * FROM php_for_beginners.notes WHERE id = :id', [':id' => $id])->findOrFail();
 
 authorize($note['user_id'] === $currentUser);
 
@@ -29,7 +29,7 @@ if (count($errors)) {
     ]);
 }
 
-$db->query('UPDATE notes SET body  = :body WHERE id = :id', ['id' => $id, ':body' => $body]);
+$db->query('UPDATE php_for_beginners.notes SET body  = :body WHERE id = :id', ['id' => $id, ':body' => $body]);
 
 
 header('location: /notes');

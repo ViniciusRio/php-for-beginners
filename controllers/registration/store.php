@@ -24,7 +24,7 @@ if (! empty($errors)) {
     ]);
 }
 
-$user = $db->query('SELECT * FROM users WHERE email = :email', [
+$user = $db->query('SELECT * FROM php_for_beginners.users WHERE email = :email', [
     ':email' => $email
 ])->find();
 
@@ -32,7 +32,7 @@ if ($user) {
     header('location: /register');
     exit();
 } else {
-    $db->query('INSERT INTO users(email,password) VALUES(:email, :password)', [
+    $db->query('INSERT INTO php_for_beginners.users(email,password) VALUES(:email, :password)', [
         ':email' =>$email,
         ':password' =>password_hash($password, PASSWORD_BCRYPT)
     ]);
