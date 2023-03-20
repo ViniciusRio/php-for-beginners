@@ -36,3 +36,9 @@ function abort($status = 404) {
     require base_path("views/{$status}.php");
     die();
 }
+
+function login($user) {
+    $_SESSION['user'] = [
+        'email' => $user['email']
+    ];
+}
