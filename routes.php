@@ -13,8 +13,9 @@ $router->get('/note/edit', 'controllers/notes/edit.php');
 $router->get('/notes/create', 'controllers/notes/create.php');
 
 $router->get('/register', 'controllers/registration/create.php')->only('guest');
-$router->post('/register', 'controllers/registration/store.php');
+$router->post('/register', 'controllers/registration/store.php')->only('guest');
 
 $router->get('/login', 'controllers/login/create.php')->only('guest');
 $router->post('/login', 'controllers/login/store.php')->only('guest');
+$router->delete('/logout', 'controllers/logout/destroy.php')->only('auth');
 
