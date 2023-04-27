@@ -15,4 +15,3 @@ if(!$isSingd) {
 }
 
 redirect('/');
-

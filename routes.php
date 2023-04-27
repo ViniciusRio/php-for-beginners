@@ -6,7 +6,7 @@ $router->get('/notes', 'notes/index.php')->only('auth');
 $router->post('/notes', 'notes/store.php');
 
 $router->get('/note', 'notes/show.php');
-$router->delete('/note', 'notes/destroy.php');
+$router->delete('/note', 'notes/destroy.php')->only('auth');
 $router->patch('/note', 'notes/update.php');
 
 $router->get('/note/edit', 'notes/edit.php');

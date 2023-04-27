@@ -1,6 +1,7 @@
 <?php
 use Core\Session;
 use Core\Router;
+use Core\Validation\NotFoundException;
 use Core\Validation\ValidationException;
 
 session_start();
@@ -28,6 +29,10 @@ try {
 } catch (ValidationException $validationException) {
     Session::flash('errors', $validationException->errors);
     Session::flash('old', ['email' => $validationException->old['email']]);
+    
+    return redirect($router->previousUrl());
+} catch (NotFoundException $exception) {
+    Session::flash('errors', $exception->message());
     
     return redirect($router->previousUrl());
 }
