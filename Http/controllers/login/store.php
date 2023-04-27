@@ -1,8 +1,6 @@
 <?php
 
 use Core\Authenticator;
-use Core\Session;
-use Core\Validation\ValidationException;
 use Http\Forms\LoginForm;
 
 $form = LoginForm::validate($attributes = [
