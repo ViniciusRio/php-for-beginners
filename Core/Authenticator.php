@@ -17,10 +17,9 @@ class Authenticator
                     'email' => $email
                 ]);
 
-
+                return true;
             }
 
-            return true;
         }
 
         return false;
