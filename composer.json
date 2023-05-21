@@ -1,0 +1,17 @@
+{
+    "name": "vlmdr/php-for-beginners",
+    "authors": [
+        {
+            "name": "Vinicius Rio",
+            "email": "viniciustrave@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+
+        }
+    }
+}
